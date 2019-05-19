@@ -104,10 +104,8 @@ export default {
           axios.get(mainUrl + "/" + i)
           .then(response => {
 
-             if (response.status === 200) {
-               console.log(response.status);
-             return this.comment = response.data;
-                             
+             while (response.status === 200) {
+                    break;          
       }
           
   

@@ -104,12 +104,11 @@ export default {
           axios.get(mainUrl + "/" + i)
           .then(response => {
 
-             if (response.status === 200) {
-               console.log(response.status);
-             return this.comment = response.data;
-                             
+             while (response.status === 200) {
+                    break;          
       }
-          
+          console.log(response.status);
+          this.comment = response.data;
   
       
                 //if (response.status === 404) {
