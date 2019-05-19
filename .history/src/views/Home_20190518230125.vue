@@ -43,7 +43,7 @@
      <div id="write-comment">
        <h2>Write comment</h2>
        <div class="main-form">
-         <form action="#" @submit.prevent="commentPost">
+         <form action="#" method="post" @submit.prevent="commentPost">
            <input type="text" v-model="title" placeholder="Title">
            <input type="textarea" v-model="body" placeholder="Your comment">
            <button type="submit">Send</button>
@@ -68,6 +68,7 @@
 // @ is an alias to /src
 import axios from 'axios';
 import Header from '@/components/Header.vue';
+import { runInThisContext } from 'vm';
 
 export default {
   name: 'home',
@@ -83,9 +84,8 @@ export default {
 
   methods: {
     commentPost() {
-      let userComment = {title: this.title, body: this.body};
       axios.post('https://5cbef81d06a6810014c66193.mockapi.io/api/comments', 
-        userComment,
+        this.title, runInThisContext.body,
         { headers: {
           'Content-type': 'application/json',
         }

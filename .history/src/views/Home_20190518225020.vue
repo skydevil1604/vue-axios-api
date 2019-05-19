@@ -43,9 +43,9 @@
      <div id="write-comment">
        <h2>Write comment</h2>
        <div class="main-form">
-         <form action="#" @submit.prevent="commentPost">
-           <input type="text" v-model="title" placeholder="Title">
-           <input type="textarea" v-model="body" placeholder="Your comment">
+         <form action="#" method="post" @submit.prevent="commentPost">
+           <input type="text" v-model="obj.title" placeholder="Title">
+           <input type="textarea" v-model="obj.body" placeholder="Your comment">
            <button type="submit">Send</button>
          </form>
        </div>
@@ -83,9 +83,10 @@ export default {
 
   methods: {
     commentPost() {
-      let userComment = {title: this.title, body: this.body};
+      console.log ('@comment');
       axios.post('https://5cbef81d06a6810014c66193.mockapi.io/api/comments', 
-        userComment,
+        //this.Date, this.commentTitle, this.commentBody,
+        this.comment.title, this.comment.body,
         { headers: {
           'Content-type': 'application/json',
         }

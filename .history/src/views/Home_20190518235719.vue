@@ -82,6 +82,10 @@ export default {
   }),
 
   methods: {
+    /*console() {
+      let userComment = {title: this.title, body: this.body};
+      console.log(userComment);
+    },*/
     commentPost() {
       let userComment = {title: this.title, body: this.body};
       axios.post('https://5cbef81d06a6810014c66193.mockapi.io/api/comments', 
