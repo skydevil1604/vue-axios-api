@@ -105,10 +105,11 @@ export default {
           .then(response => {
 
              while (response.status === 200) {
-                    break;          
-      }
+      
           console.log(response.status);
           this.comment = response.data;
+          bre
+      }
   
       
                 //if (response.status === 404) {

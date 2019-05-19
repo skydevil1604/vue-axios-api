@@ -107,8 +107,6 @@ export default {
              while (response.status === 200) {
                     break;          
       }
-          console.log(response.status);
-          this.comment = response.data;
   
       
                 //if (response.status === 404) {

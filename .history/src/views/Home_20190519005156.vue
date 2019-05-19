@@ -98,49 +98,7 @@ export default {
     }
   },
 
- created() {
-    let mainUrl = 'https://5cbef81d06a6810014c66193.mockapi.io/api/comments';  
-  for (let i = 1; i < 200; i++) {
-          axios.get(mainUrl + "/" + i)
-          .then(response => {
-
-             while (response.status === 200) {
-                    break;          
-      }
-          console.log(response.status);
-          this.comment = response.data;
-  
-      
-                //if (response.status === 404) {
-        //console.log("Fuck!!!");
-          //}
-        })
-    }
- }
-
-
-
-
-/*created() {
-   let mainUrl = 'https://5cbef81d06a6810014c66193.mockapi.io/api/comments';
-   for (let i = 1; i < 200; i++) {
-          axios.get(mainUrl + "/" + i)
-          .then(response => {switch (response.status) {
-        case 200: this.comment = response.data;
-
-        break;
-
-        case 404: console.log('FUCK!!!');
-        
-        break;
-
-      default:
-        break;
-    }});
-               
-  };
-*/
-  /*created() {
+  created() {
     let mainUrl = 'https://5cbef81d06a6810014c66193.mockapi.io/api/comments';
     let i = 1;
     axios.get(mainUrl + "/" + i)
@@ -149,19 +107,19 @@ export default {
           this.comment = response.data
       }
       if (response.status == 404) {
-        console.log("Fuck!!!")
-        //for (let i = 1; i < 200; i++) {
+        console.log()
+        //for (let i = 1; i < 1000; i++) {
           //axios.get(mainUrl + "/" + i);
           //if  (response.status == 200) {
           //this.comment = response.data
-     // }        
-    //    }
+      }        
+        }
       }
     })
     .catch(e => {
       this.errors.push(e)
     })
-  }*/
+  }
 }
 </script>
 

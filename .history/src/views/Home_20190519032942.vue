@@ -99,17 +99,13 @@ export default {
   },
 
  created() {
-    let mainUrl = 'https://5cbef81d06a6810014c66193.mockapi.io/api/comments';  
+    let mainUrl = 'https://5cbef81d06a6810014c66193.mockapi.io/api/comments';   
   for (let i = 1; i < 200; i++) {
           axios.get(mainUrl + "/" + i)
           .then(response => {
-
-             while (response.status === 200) {
-                    break;          
+              if (resquest.status === 200) {
       }
-          console.log(response.status);
-          this.comment = response.data;
-  
+      this.comment = response.data;
       
                 //if (response.status === 404) {
         //console.log("Fuck!!!");
